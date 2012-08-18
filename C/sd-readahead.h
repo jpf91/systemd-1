@@ -47,22 +47,14 @@ extern "C" {
 
   You may find an up-to-date version of these source files online:
 
-  http://cgit.freedesktop.org/systemd/plain/src/sd-readahead.h
-  http://cgit.freedesktop.org/systemd/plain/src/sd-readahead.c
+  http://cgit.freedesktop.org/systemd/systemd/plain/src/systemd/sd-readahead.h
+  http://cgit.freedesktop.org/systemd/systemd/plain/src/readahead/sd-readahead.c
 
   This should compile on non-Linux systems, too, but all functions
   will become NOPs.
 
-  See sd-readahead(7) for more information.
+  See sd-readahead(3) for more information.
 */
-
-#ifndef _sd_hidden_
-#if (__GNUC__ >= 4) && !defined(SD_EXPORT_SYMBOLS)
-#define _sd_hidden_ __attribute__ ((visibility("hidden")))
-#else
-#define _sd_hidden_
-#endif
-#endif
 
 /*
   Controls ongoing disk read-ahead operations during boot-up. The argument
@@ -72,7 +64,7 @@ extern "C" {
   done = terminate read-ahead data collection, keep collected information
   noreplay = terminate read-ahead replay
 */
-int sd_readahead(const char *action) _sd_hidden_;
+int sd_readahead(const char *action);
 
 #ifdef __cplusplus
 }

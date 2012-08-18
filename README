@@ -14,10 +14,13 @@ The following functionality is provided:
 * Detection of systemd boots
 http://www.freedesktop.org/wiki/Software/systemd
 
+Note:
+The sd_shutdown_command struct in sd_shutdown is not yet supported.
+
 License:
 libsystemd-daemon and the D bindings are released under the MIT license.
 
-Binding version: 37
+Binding version: 188
 
 High-Level Wrapper:
 not available
